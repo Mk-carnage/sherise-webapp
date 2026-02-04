@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* SheRise Empowering Color Palette */
+    --background: 270 30% 99%;
+    --foreground: 270 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 25% 15%;
+
+    /* Primary: Soft Purple/Lavender - Empowering & Calming */
+    --primary: 270 50% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Teal - Trust & Growth */
+    --secondary: 175 45% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent: Coral/Rose - Warm & Energetic */
+    --accent: 15 80% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 270 15% 95%;
+    --muted-foreground: 270 15% 45%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 20% 90%;
+    --input: 270 20% 90%;
+    --ring: 270 50% 60%;
+
+    --radius: 1rem;
+
+    /* Custom SheRise tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(270 50% 60%) 0%, hsl(290 45% 55%) 50%, hsl(15 80% 65%) 100%);
+    --gradient-hero: linear-gradient(160deg, hsl(270 40% 97%) 0%, hsl(290 30% 95%) 50%, hsl(15 50% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(270 20% 98%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(175 45% 45%) 0%, hsl(185 50% 50%) 100%);
+    --gradient-coral: linear-gradient(135deg, hsl(15 80% 65%) 0%, hsl(25 85% 60%) 100%);
+    --gradient-wellness: linear-gradient(135deg, hsl(270 50% 60%) 0%, hsl(175 45% 45%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(270 30% 50% / 0.12);
+    --shadow-card: 0 8px 32px -8px hsl(270 30% 50% / 0.15);
+    --shadow-elevated: 0 16px 48px -12px hsl(270 30% 50% / 0.2);
+    --shadow-glow-primary: 0 0 24px hsl(270 50% 60% / 0.25);
+    --shadow-glow-accent: 0 0 24px hsl(15 80% 65% / 0.25);
+
+    /* Sidebar */
+    --sidebar-background: 270 30% 98%;
+    --sidebar-foreground: 270 25% 25%;
+    --sidebar-primary: 270 50% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 20% 94%;
+    --sidebar-accent-foreground: 270 25% 25%;
+    --sidebar-border: 270 20% 92%;
+    --sidebar-ring: 270 50% 60%;
+
+    /* Feature module colors */
+    --health: 270 50% 60%;
+    --safety: 0 72% 55%;
+    --career: 175 45% 45%;
+    --community: 290 45% 55%;
+    --finance: 45 80% 50%;
+  }
+
+  .dark {
+    --background: 270 25% 8%;
+    --foreground: 270 15% 95%;
+
+    --card: 270 25% 12%;
+    --card-foreground: 270 15% 95%;
+
+    --popover: 270 25% 12%;
+    --popover-foreground: 270 15% 95%;
+
+    --primary: 270 50% 65%;
+    --primary-foreground: 270 25% 10%;
+
+    --secondary: 175 45% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 15 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 270 20% 18%;
+    --muted-foreground: 270 15% 60%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 20% 20%;
+    --input: 270 20% 20%;
+    --ring: 270 50% 65%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(270 50% 50%) 0%, hsl(290 45% 45%) 50%, hsl(15 70% 55%) 100%);
+    --gradient-hero: linear-gradient(160deg, hsl(270 25% 10%) 0%, hsl(290 20% 12%) 50%, hsl(15 30% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(270 25% 14%) 0%, hsl(270 20% 12%) 100%);
+
+    --sidebar-background: 270 25% 10%;
+    --sidebar-foreground: 270 15% 90%;
+    --sidebar-primary: 270 50% 65%;
+    --sidebar-primary-foreground: 270 25% 10%;
+    --sidebar-accent: 270 20% 16%;
+    --sidebar-accent-foreground: 270 15% 90%;
+    --sidebar-border: 270 20% 18%;
+    --sidebar-ring: 270 50% 65%;
+  }
+
+  .high-contrast {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --primary: 270 80% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 175 80% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 15 90% 45%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 20%;
+    --border: 0 0% 0%;
+  }
+
+  .high-contrast.dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --primary: 270 80% 70%;
+    --primary-foreground: 0 0% 0%;
+    --border: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* Font size accessibility */
+  .font-size-large body,
+  .font-size-large {
+    font-size: 1.125rem;
+  }
+
+  .font-size-extra-large body,
+  .font-size-extra-large {
+    font-size: 1.25rem;
+  }
+}
+
+@layer components {
+  .sherise-card {
+    @apply bg-card rounded-2xl p-6 transition-all duration-300;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .sherise-card:hover {
+      box-shadow: var(--shadow-elevated);
+      transform: translateY(-2px);
+    }
+  }
+
+  .sherise-gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sherise-hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .sherise-button-glow {
+    box-shadow: var(--shadow-glow-primary);
+  }
+
+  .sherise-button-glow:hover {
+    box-shadow: var(--shadow-glow-accent);
+  }
+
+  /* Bottom navigation for mobile */
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-card/95 backdrop-blur-lg border-t border-border z-50;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* SOS Emergency button */
+  .sos-button {
+    @apply bg-destructive text-destructive-foreground font-bold rounded-full;
+    box-shadow: 0 0 0 0 hsl(var(--destructive));
+    animation: sos-pulse 2s infinite;
+  }
+
+  @keyframes sos-pulse {
+    0% {
+      box-shadow: 0 0 0 0 hsl(var(--destructive) / 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 12px hsl(var(--destructive) / 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 hsl(var(--destructive) / 0);
+    }
+  }
+
+  /* Feature module card colors */
+  .module-health {
+    border-left: 4px solid hsl(var(--health));
+  }
+
+  .module-safety {
+    border-left: 4px solid hsl(var(--safety));
+  }
+
+  .module-career {
+    border-left: 4px solid hsl(var(--career));
+  }
+
+  .module-community {
+    border-left: 4px solid hsl(var(--community));
+  }
+
+  .module-finance {
+    border-left: 4px solid hsl(var(--finance));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
